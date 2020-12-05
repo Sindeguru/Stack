@@ -5,8 +5,8 @@ project(${PROJECT_NAME}) # Название проекта
 
 set(main main) #Переменная с именем приложения
 set(stack stack) #Переменная с именем библиотеки
-set(test test)
-set(gtest gtest)
+#set(test test)
+#set(gtest gtest)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
