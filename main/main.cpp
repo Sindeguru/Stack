@@ -1,15 +1,15 @@
 #include <iostream>
-#include <stack.h>
+#include <stacklist.h>
 //#include <queue>
 
 using namespace std;
 
 int main()
 {
-	TStack<int> A(1);
-	cout << A.empty() << endl;
-	A.push(7);
-	cout << A.top() << endl;
-	A.push(23);
+	TStackList<int> A;
+	cout << A.IsEmpty() << endl;
+	A.Push(7);
+	cout << A.Get() << endl;
+	A.Push(23);
 	return 0;
 }
