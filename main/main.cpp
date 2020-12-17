@@ -6,10 +6,10 @@ using namespace std;
 
 int main()
 {
-	TStack<int> A(5);
+	TStack<int> A(1);
 	cout << A.empty() << endl;
-	A.push(12);
+	A.push(7);
 	cout << A.top() << endl;
-
+	A.push(23);
 	return 0;
 }
