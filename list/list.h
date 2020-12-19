@@ -129,12 +129,10 @@ inline TList<T>& TList<T>::operator=(TList<T>& _v)
 {
   if (this == _v)
     return *this;
-
   if (this->root != 0)
   {
     TListElem<T>* i = this->root;
     TListElem<T>* p = 0;
-
     while (i != 0)
     {
       p = i;
@@ -142,15 +140,13 @@ inline TList<T>& TList<T>::operator=(TList<T>& _v)
       delete p;
     }
     this->root = 0;
-    this->end = 0;
+    this->end = -1;
     count = 0;
   }
-
   count = _v.count;
   TListElem<T>* i = _v.root;
   TListElem<T>* j = this->root;
   TListElem<T>* p = 0;
-
   while (i != 0)
   {
     j = new TListElem<T>(*i);
@@ -162,12 +158,9 @@ inline TList<T>& TList<T>::operator=(TList<T>& _v)
     }
     else
       p = j;
-
     if (root == 0)
       root = j;
-
     end = j;
-
     i = i->GetNext();
   }
 }
@@ -177,6 +170,7 @@ inline void TList<T>::InsFirst(T d)
 {
   TListElem<T> *tmp = new TListElem<T>(d);
   tmp->SetNext(root);
+  tmp->SetPrev(NULL);
   root = tmp;
   count++;
 }
@@ -184,7 +178,7 @@ inline void TList<T>::InsFirst(T d)
 template<class T>
 inline void TList<T>::InsLast(T d)
 {
-  TLisElem<T> tmp = new TListElem<T>(d);
+  TListElem<T> *tmp = new TListElem<T>(d);
   tmp->SetPrev(end);
   end = tmp;
   count++;
@@ -193,7 +187,7 @@ inline void TList<T>::InsLast(T d)
 template<class T>
 inline void TList<T>::Ins(TListElem<T>* e, T d)
 {
-  TLisElem<T> tmp = new TListElem<T>(d);
+  TListElem<T> tmp = new TListElem<T>(d);
   tmp->SetNext(e->GetNext());
   tmp->SetPrev(e);
   e->GetNext()->SetPrev(tmp);
@@ -222,6 +216,8 @@ inline TListElem<T>* TList<T>::GetLast()
 template<class T>
 inline void TList<T>::DellFirst()
 {
+  if (IsEmpty())
+    throw logic_error("list is empty");
   TListElem<T>* i = root;
   root = root->GetNext();
   delete i;
@@ -231,6 +227,9 @@ inline void TList<T>::DellFirst()
 template<class T>
 inline void TList<T>::DellLast()
 {
+  if (IsEmpty())
+    throw logic_error("list is empty");
+
   TListElem<T>* i = end;
   end = end->GetPrev();
   delete i;

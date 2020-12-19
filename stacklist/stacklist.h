@@ -78,7 +78,7 @@ template<class T>
 inline T TStackList<T>::Get()
 {
 	if (list.IsEmpty())
-		throw "stack is empty";
+		throw logic_error("stack is empty");
 
 	T tmp = list.GetFirst()->GetData();
 	list.DellFirst();

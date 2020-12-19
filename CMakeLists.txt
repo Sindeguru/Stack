@@ -10,13 +10,14 @@ set(gtest gtest)
 set(stacklist stacklist)
 set(list list)
 set(listelem listelem)
+set(queuelist queuelist)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
 if(NOT CMAKE_BUILD_TYPE) # проверка имеющихся у компилятора вариантов сборки
   set(CMAKE_BUILD_TYPE Release) #Если нет то устанавливаем Release
 endif()
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack ${CMAKE_CURRENT_SOURCE_DIR}/stacklist ${CMAKE_CURRENT_SOURCE_DIR}/list ${CMAKE_CURRENT_SOURCE_DIR}/listelem) #Добавляем директорию "${CMAKE_CURRENT_SOURCE_DIR}/vectorlib" в дополняемые каталоги включаемых файлов
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/stack ${CMAKE_CURRENT_SOURCE_DIR}/queuelist ${CMAKE_CURRENT_SOURCE_DIR}/stacklist ${CMAKE_CURRENT_SOURCE_DIR}/list ${CMAKE_CURRENT_SOURCE_DIR}/listelem) #Добавляем директорию "${CMAKE_CURRENT_SOURCE_DIR}/vectorlib" в дополняемые каталоги включаемых файлов
 #${CMAKE_CURRENT_SOURCE_DIR} - стандартная переменная с адресом рабочей директории
 
 add_subdirectory(main) #Добавляем директорию с под-CMakeList-ом, и выполняем под-CMakeList
@@ -26,6 +27,7 @@ add_subdirectory(listelem)
 add_subdirectory(stacklist)
 add_subdirectory(test)
 add_subdirectory(gtest)
+add_subdirectory(queuelist)
 
 #file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
 #file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .cpp

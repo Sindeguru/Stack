@@ -1,15 +1,15 @@
 #include <iostream>
 #include <stacklist.h>
-//#include <queue>
+#include <queuelist.h>
 
 using namespace std;
 
 int main()
 {
-	TStackList<int> A;
-	cout << A.IsEmpty() << endl;
-	A.Push(7);
-	cout << A.Get() << endl;
-	A.Push(23);
+
+  TQueueList<int> A;
+  A.Push(1234);
+  cout<< A.Get();
+
 	return 0;
 }

@@ -1,6 +1,6 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
-
+/*
 using namespace std;
 template <class T>
 class TStack
@@ -17,10 +17,10 @@ public:
 
   TStack<T>& operator =(TStack<T>& _v);
 
-  void push(T Elem); // Поместить элемент стека в вершину стэка
-  T top(); //Вывести верхний элемент стэка
-  void pop(); //Удалить верхний элемент
-  bool empty(); //Пуст ли стек
+  void push(T Elem); // ГЏГ®Г¬ГҐГ±ГІГЁГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ Г±ГІГҐГЄГ  Гў ГўГҐГ°ГёГЁГ­Гі Г±ГІГЅГЄГ 
+  T top(); //Г‚Г»ГўГҐГ±ГІГЁ ГўГҐГ°ГµГ­ГЁГ© ГЅГ«ГҐГ¬ГҐГ­ГІ Г±ГІГЅГЄГ 
+  void pop(); //Г“Г¤Г Г«ГЁГІГј ГўГҐГ°ГµГ­ГЁГ© ГЅГ«ГҐГ¬ГҐГ­ГІ
+  bool empty(); //ГЏГіГ±ГІ Г«ГЁ Г±ГІГҐГЄ
   bool IsFull();
 
 };
@@ -78,10 +78,10 @@ inline void TStack<T>::push(T Elem)
 {
   if (IsFull())
     throw "isfull";
-  
+
   vs++;
   arr[vs] = Elem;
-  
+
 }
 
 template<class T>
@@ -114,5 +114,6 @@ inline bool TStack<T>::empty()
 template<class T>
 inline bool TStack<T>::IsFull()
 {
-  return (vs+1) >= length;
+  return (vs + 1) >= length;
 }
+*/
